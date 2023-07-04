@@ -19,7 +19,8 @@ export default function Chat() {
     connectToWs();
   }, [selectedUserId]);
   function connectToWs() {
-    const ws = new WebSocket('ws://localhost:4040');
+    //ws://localhost:4040   use this for local device
+    const ws = new WebSocket('ws://mernchat-d7f3.onrender.com');
     setWs(ws);
     ws.addEventListener('message', handleMessage);
     ws.addEventListener('close', () => {
